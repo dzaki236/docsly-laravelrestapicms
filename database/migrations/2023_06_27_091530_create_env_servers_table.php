@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('env_servers', function (Blueprint $table) {
             $table->id();
+            $table->string('url');
+            $table->string('env');//Production,QA,Development
+            $table->longText('desc');
+            $table->enum('status',['active','inactive']);
             $table->timestamps();
         });
     }
