@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->longText('desc');
             $table->string('logo');
+            $table->enum('available', ['guest', 'member'])->default('guest');
             $table->timestamps();
         });
     }
